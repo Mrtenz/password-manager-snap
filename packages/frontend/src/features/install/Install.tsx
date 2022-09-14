@@ -1,6 +1,6 @@
 import { Check, InstallDesktop } from '@mui/icons-material';
 import { Button, CircularProgress, Stack, Typography } from '@mui/material';
-import { FunctionComponent, ReactNode } from 'react';
+import type { FunctionComponent, ReactNode } from 'react';
 import {
   useGetFlaskQuery,
   useGetSnapsQuery,
@@ -12,9 +12,7 @@ export interface RequireFlaskProps {
   children: ReactNode;
 }
 
-export const RequireInstall: FunctionComponent<RequireFlaskProps> = ({
-  children,
-}) => {
+export const Install: FunctionComponent<RequireFlaskProps> = ({ children }) => {
   const [installSnap, { isLoading, isSuccess }] = useInstallSnapMutation();
 
   const { data: isFlask } = useGetFlaskQuery(undefined, {

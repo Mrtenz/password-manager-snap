@@ -1,4 +1,4 @@
-import { GatsbyConfig } from 'gatsby';
+import type { GatsbyConfig } from 'gatsby';
 
 const config: GatsbyConfig = {
   jsxRuntime: 'automatic',

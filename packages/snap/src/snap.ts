@@ -1,4 +1,4 @@
-import { OnRpcRequestHandler } from '@metamask/snap-types';
+import type { OnRpcRequestHandler } from '@metamask/snap-types';
 import {
   getDerivationPath,
   generatePassword,

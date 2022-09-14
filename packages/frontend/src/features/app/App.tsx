@@ -1,8 +1,9 @@
 import { Box, Button, Container, Stack, Typography } from '@mui/material';
-import { FunctionComponent, useState } from 'react';
+import type { FunctionComponent } from 'react';
+import { useState } from 'react';
 import { FormContainer, TextFieldElement } from 'react-hook-form-mui';
 import { useGeneratePasswordMutation } from '../../api';
-import { RequireInstall } from '../install';
+import { Install } from '../install';
 import { MaskSelector } from '../mask';
 import { Nicknames } from '../nicknames';
 
@@ -22,7 +23,7 @@ export const App: FunctionComponent = () => {
     <Box paddingTop={8} paddingBottom={8}>
       <Container maxWidth="sm">
         <Typography variant="h2">Password Snap</Typography>
-        <RequireInstall>
+        <Install>
           <Typography marginTop={2}>
             To get started, enter a nickname for your password below, and click
             "Generate".
@@ -47,7 +48,7 @@ export const App: FunctionComponent = () => {
 
           <MaskSelector onChange={setMask} />
           <Nicknames />
-        </RequireInstall>
+        </Install>
       </Container>
     </Box>
   );

@@ -1,5 +1,5 @@
 import { List, Typography } from '@mui/material';
-import { FunctionComponent } from 'react';
+import type { FunctionComponent } from 'react';
 import { useGetNicknamesQuery } from '../../api';
 import { Backup } from './Backup';
 import { Nickname } from './Nickname';

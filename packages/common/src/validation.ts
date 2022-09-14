@@ -1,4 +1,5 @@
-import { array, Infer, is, number, object, string } from 'superstruct';
+import type { Infer } from 'superstruct';
+import { array, is, number, object, string } from 'superstruct';
 
 export const NameStruct = object({
   name: string(),

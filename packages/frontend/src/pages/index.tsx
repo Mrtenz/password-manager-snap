@@ -1,5 +1,5 @@
 import { CssBaseline } from '@mui/material';
-import { FunctionComponent } from 'react';
+import type { FunctionComponent } from 'react';
 import { App } from '../features/app';
 
 import './index.css';

@@ -1,8 +1,6 @@
 import { describe, it, expect } from '@jest/globals';
 import { getDerivationPath } from '@mrtenz/password-generator';
 import { passwords } from './__fixtures__';
-// eslint-disable-next-line jest/no-mocks-import
-import { getWalletMock } from './__mocks__/wallet';
 import { onRpcRequest } from './snap';
 
 describe('onRpcRequest', () => {
@@ -10,11 +8,6 @@ describe('onRpcRequest', () => {
     it.each(passwords)(
       'shows the password in a confirmation prompt',
       async ({ mask, name, password }) => {
-        const wallet = getWalletMock();
-        Object.assign(globalThis, {
-          wallet,
-        });
-
         await onRpcRequest({
           request: {
             jsonrpc: '2.0',

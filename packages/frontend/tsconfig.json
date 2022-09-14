@@ -7,11 +7,5 @@
     "jsx": "preserve",
     "declaration": false
   },
-  "include": [
-    "src",
-    "src/**/*.json",
-    "gatsby-config.ts",
-    "jest.config.ts",
-    "jest.setup.ts"
-  ]
+  "include": ["src", "src/**/*.json", "**/*.ts"]
 }

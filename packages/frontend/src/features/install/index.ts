@@ -1,1 +1,1 @@
-export * from './RequireInstall';
+export * from './Install';

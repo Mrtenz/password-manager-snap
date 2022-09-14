@@ -1,8 +1,10 @@
 import type { MetaMaskInpageProvider } from '@metamask/providers';
-import { RequestArguments } from '@metamask/providers/dist/BaseProvider';
-import { JsonRpcError } from '@metamask/types';
-import { Name, RpcMethod, State } from '@mrtenz/password-snap-common';
-import { BaseQueryFn, createApi } from '@reduxjs/toolkit/query/react';
+import type { RequestArguments } from '@metamask/providers/dist/BaseProvider';
+import type { JsonRpcError } from '@metamask/types';
+import type { Name, State } from '@mrtenz/password-snap-common';
+import { RpcMethod } from '@mrtenz/password-snap-common';
+import type { BaseQueryFn } from '@reduxjs/toolkit/query/react';
+import { createApi } from '@reduxjs/toolkit/query/react';
 import { SNAP_ID, SNAP_VERSION } from './constants';
 
 declare global {

@@ -5,7 +5,7 @@
     "rootDir": ".",
     "outDir": "lib"
   },
-  "include": ["src", "src/**/*.json", "jest.config.ts"],
+  "include": ["src", "test", "src/**/*.json", "jest.config.ts"],
   "files": ["../../node_modules/@metamask/snap-types/global.d.ts"],
   "references": [{ "path": "../generator" }]
 }

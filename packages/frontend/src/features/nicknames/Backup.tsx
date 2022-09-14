@@ -1,7 +1,8 @@
 import { isState } from '@mrtenz/password-snap-common';
 import { Download, Upload } from '@mui/icons-material';
 import { Button, Stack } from '@mui/material';
-import { ChangeEvent, FunctionComponent, useEffect, useState } from 'react';
+import type { ChangeEvent, FunctionComponent } from 'react';
+import { useEffect, useState } from 'react';
 import { useGetNicknamesQuery, useImportNicknamesMutation } from '../../api';
 
 export const Backup: FunctionComponent = () => {

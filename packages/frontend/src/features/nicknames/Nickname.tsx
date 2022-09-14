@@ -6,7 +6,7 @@ import {
   ListItemText,
   Typography,
 } from '@mui/material';
-import { FunctionComponent } from 'react';
+import type { FunctionComponent } from 'react';
 import {
   useGeneratePasswordMutation,
   useRemoveNicknameMutation,

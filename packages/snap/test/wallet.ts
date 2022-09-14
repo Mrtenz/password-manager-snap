@@ -1,26 +1,32 @@
 import assert from 'assert';
-import { jest } from '@jest/globals';
-import { Maybe } from '@metamask/providers/dist/utils';
-import { SnapProvider } from '@metamask/snap-types';
-import { isPlainObject, PlainObject } from '@metamask/utils';
+import type { Maybe } from '@metamask/providers/dist/utils';
+import type { SnapProvider } from '@metamask/snap-types';
+import type { PlainObject } from '@metamask/utils';
+import { isPlainObject } from '@metamask/utils';
 import { bytesToHex } from '@noble/hashes/utils';
 import { HDKey } from '@scure/bip32';
 import { mnemonicToSeed } from '@scure/bip39';
-import { TEST_MNEMONIC } from '../__fixtures__';
+import { snapConfirm } from './mock';
 
-export const getWalletMock = (): SnapProvider => {
+export interface WalletMockOptions {
+  mnemonicPhrase: string;
+}
+
+export const getWalletMock = ({
+  mnemonicPhrase,
+}: WalletMockOptions): SnapProvider => {
   let state: PlainObject | null = null;
 
-  const request = jest
-    .fn<SnapProvider['request']>()
+  const request: SnapProvider['request'] = jest
+    .fn()
     .mockImplementation(async ({ method, params }): Promise<Maybe<unknown>> => {
       // Mock implementation of the `snap_getBip32Entropy` method, which derives a
-      // node from `TEST_MNEMONIC`.
+      // node from `mnemonicPhrase`.
       if (method === 'snap_getBip32Entropy') {
         assert(isPlainObject(params));
         assert(Array.isArray(params.path));
 
-        const seed = await mnemonicToSeed(TEST_MNEMONIC);
+        const seed = await mnemonicToSeed(mnemonicPhrase);
         const node = HDKey.fromMasterSeed(seed);
         const child = node.derive(params.path.join('/'));
 
@@ -56,7 +62,7 @@ export const getWalletMock = (): SnapProvider => {
       // Mock implementation of the `snap_confirm` method, which always returns
       // true.
       if (method === 'snap_confirm') {
-        return true;
+        return await snapConfirm();
       }
 
       throw new Error(`Method "${method}" not implemented.`);

@@ -1,4 +1,5 @@
-import { isState, Name, State } from '@mrtenz/password-snap-common';
+import type { Name, State } from '@mrtenz/password-snap-common';
+import { isState } from '@mrtenz/password-snap-common';
 
 const INITIAL_STATE: State = {
   names: [],

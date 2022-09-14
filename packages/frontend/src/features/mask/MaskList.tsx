@@ -1,5 +1,6 @@
 import { Chip, Grid } from '@mui/material';
-import { FunctionComponent, useMemo } from 'react';
+import type { FunctionComponent } from 'react';
+import { useMemo } from 'react';
 import { getMaskList } from './utils';
 
 interface MaskListProps {

@@ -6,7 +6,8 @@ import {
   ListItemIcon,
   ListItemText,
 } from '@mui/material';
-import { FunctionComponent, useEffect, useState } from 'react';
+import type { FunctionComponent } from 'react';
+import { useEffect, useState } from 'react';
 import { getSetMask, Mask, MASKS } from './utils';
 
 interface MaskSelectorProps {
