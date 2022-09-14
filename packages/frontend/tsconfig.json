@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "src",
+    "rootDir": ".",
+    "outDir": "lib",
+    "jsx": "preserve",
+    "declaration": false
+  },
+  "include": [
+    "src",
+    "src/**/*.json",
+    "gatsby-config.ts",
+    "jest.config.ts",
+    "jest.setup.ts"
+  ]
+}

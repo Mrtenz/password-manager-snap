@@ -1,0 +1,20 @@
+# Node.js
+node_modules
+
+# Build files
+.cache
+public
+lib
+dist
+
+# Test files
+coverage
+
+# Yarn directories
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

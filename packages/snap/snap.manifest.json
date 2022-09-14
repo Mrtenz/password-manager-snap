@@ -1,0 +1,30 @@
+{
+  "version": "0.1.0",
+  "description": "A MetaMask Snap password manager compatible with Ledger devices.",
+  "proposedName": "@mrtenz/password-snap",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mrtenz/password-snap.git"
+  },
+  "source": {
+    "shasum": "q4Ce7QQ5TpBCm4PnXBcHzqKKyMO/KjEJZUboQM+pnGE=",
+    "location": {
+      "npm": {
+        "filePath": "dist/bundle.js",
+        "packageName": "@mrtenz/password-snap",
+        "registry": "https://registry.npmjs.org/"
+      }
+    }
+  },
+  "initialPermissions": {
+    "snap_confirm": {},
+    "snap_manageState": {},
+    "snap_getBip32Entropy": [
+      {
+        "path": ["m", "5265220'"],
+        "curve": "secp256k1"
+      }
+    ]
+  },
+  "manifestVersion": "0.1"
+}

@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "src",
+    "rootDir": ".",
+    "outDir": "lib"
+  },
+  "include": ["src", "src/**/*.json", "jest.config.ts"],
+  "files": ["../../node_modules/@metamask/snap-types/global.d.ts"],
+  "references": [{ "path": "../generator" }]
+}
